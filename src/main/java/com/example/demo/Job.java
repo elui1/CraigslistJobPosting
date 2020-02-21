@@ -18,6 +18,18 @@ public class Job {
     private String author;
     private String phone;
 
+    public Job() {
+    }
+
+    public Job(String title, String description, String postedDate, String author, String phone) {
+        this.title = title;
+        this.description = description;
+        this.postedDate = postedDate;
+        this.author = author;
+        this.phone = phone;
+    }
+
+
     public long getId() {
         return id;
     }

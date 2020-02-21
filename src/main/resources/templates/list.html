@@ -5,11 +5,11 @@
     <title>Job List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
-<!--<style>-->
-<!--    body {-->
-<!--        background-color: linen;-->
-<!--    }-->
-<!--</style>-->
+<style>
+    /** {*/
+    /*    border-style: dashed;*/
+    /*}*/
+</style>
 <body>
 <h1>Job List</h1>
 <a href="/add">Add a Job</a><br />
@@ -31,6 +31,7 @@
 <!--    </div>-->
 <div class="container">
     <div class="row">
+<!--        <div class="col-12">-->
         <div th:each="job : ${jobs}">
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
@@ -40,22 +41,24 @@
                         <p th:inline="text" class="list-group-item">Description: [[${job.description}]]</p>
                         <p th:inline="text" class="list-group-item">Posted Date: [[${job.postedDate}]]</p>
                         <p th:inline="text" class="list-group-item">Author: [[${job.author}]]</p>
-                        <!--                <th:inline="text" class="list-group-item">Phone: [[${job.phone}]]</td>-->
-                        <!--                </li>-->
-                        <!--                    <td th:inline="text">[[${job.title}]]</td>    -->
-                        <!--                <td th:text-inline="Description: ${job.description}" class="list-group-item"></td>-->
+                        <p th:inline="text" class="list-group-item">Phone: [[${job.phone}]]</p>
 
                     </ul>
+                    <span><a th:href="@{/update/{id}(id=${job.id})}">Update</a>
+                    <a th:href="@{/detail/{id}(id=${job.id})}">Details</a>
+                    <a th:href="@{/delete/{id}(id=${job.id})}">Delete</a></span>
                 </div>
+                <br />
             </div>
         </div>
     </div>
+</div>
 <!--        <div th:if="${job.pic} !=null" >-->
 <!--            <img th:src="${message.pic}" /><br />-->
 <!--        </div>-->
 <!--        <td>-->
 <!--            <a th:href="@{/update/{id}(id=${job.id})}">Update</a>-->
-<!--            <a th:href="@{/detail/{id}(id=${job.id})}">Details</a>-->
+<!--            -->
 <!--            <a th:href="@{/delete/{id}(id=${job.id})}">Delete</a>-->
 <!--        </td>-->
 <!--</table>-->

@@ -8,11 +8,24 @@
 <body>
     <a href="/">Show All Jobs</a><br />
     <a href="/add">Add a Job</a><br />
-    Title :<span th:text="${job.title}" ></span><br />
-    Description :<span th:text="${job.description}" ></span><br />
-    Posted Date :<span th:text="${job.postedDate}" ></span><br />
-    Author :<span th:text="${job.author}" ></span><br />
-    Phone :<span th:text="${job.phone}" ></span><br />
+
+<!--    <div class="container">-->
+        <div class="card mx-auto" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p th:inline="text" class="card-text">Title: [[${job.title}]] </p>
+                <p th:inline="text" class="card-text">Description: [[${job.description}]] </p>
+                <p th:inline="text" class="card-text">Posted Date: [[${job.postedDate}]] </p>
+                <p th:inline="text" class="card-text">Author: [[${job.author}]] </p>
+                <p th:inline="text" class="card-text">Phone: [[${job.phone}]] </p>
+            </div>
+        </div>
+<!--    </div>-->
+<!--    Title :<span th:text="${job.title}" ></span><br />-->
+<!--    Description :<span th:text="${job.description}" ></span><br />-->
+<!--    Posted Date :<span th:text="${job.postedDate}" ></span><br />-->
+<!--    Author :<span th:text="${job.author}" ></span><br />-->
+<!--    Phone :<span th:text="${job.phone}" ></span><br />-->
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
