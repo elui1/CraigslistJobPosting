@@ -13,12 +13,28 @@
 
 </style>
 <body>
-<h1>Job Form</h1>
+<nav id="nav" class="navbar fixed-top navbar-toggleable-sm ml-auto" data-spy="affix">
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a href="/" class="navbar-brand">
+                <img src="https://cdn2.vectorstock.com/i/1000x1000/14/21/roaring-lion-logo-king-gold-on-black-background-vector-24171421.jpg" width="30" height="30" alt=""></a>
+        </nav>
+        <ul class="nav ml-auto navbar-nav">
+            <span><li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/add" class="nav-link">Add Job</a></li></span>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron" style="background-image: url(https://images.unsplash.com/photo-1567920757933-bae576b218af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80); background-size: 100%;">
+    <!--    <div class="container for-about">-->
+    <h1 style="text-align: center;">Job Form</h1>
+</div>
+</div>
     <div class="container">
         <div class="row">
         <div class="col-3"></div>
             <div class="col-6">
-    <a href="/add">Add a Job</a><br />
 
             <form action="#" th:action="@{/process}" th:object="${job}" class="form-group" method="post" enctype="multipart/form-data">
                 <input type="hidden" th:field="*{id}" />

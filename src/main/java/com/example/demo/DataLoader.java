@@ -22,7 +22,7 @@ public class DataLoader implements CommandLineRunner {
         job = new Job("Software Engineer", "blahblah", "2020-02-15", "Bond", "555");
         repository.save(job);
 
-        job = new Job("Software Engineer", "blahblah", "2020-02-15", "Bond", "666");
-        repository.save(job);
+//        job = new Job("Software Engineer", "blahblah", "2020-02-15", "Bond", "666");
+//        repository.save(job);
     }
 }
