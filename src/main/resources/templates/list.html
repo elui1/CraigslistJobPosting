@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Job List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 <style>
+    /*a {*/
+    /*    color: black;*/
+    /*}*/
+
     /** {*/
     /*    border-style: dashed;*/
     /*}*/
@@ -27,17 +32,17 @@
 <!--            </li>-->
 
 
-<nav id="nav" class="navbar fixed-top navbar-toggleable-sm ml-auto" data-spy="affix">
-    <div class="container">
-        <nav class="navbar navbar-light bg-light">
-            <a href="/" class="navbar-brand">
-                <img src="https://cdn2.vectorstock.com/i/1000x1000/14/21/roaring-lion-logo-king-gold-on-black-background-vector-24171421.jpg" width="30" height="30" alt=""></a>
-        </nav>
-        <ul class="nav ml-auto navbar-nav">
-            <span><li class="nav-item"><a href="/" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/add" class="nav-link">Add Job</a></li></span>
-        </ul>
-    </div>
+<nav id="nav" class="navbar fixed-top">
+    <!--    <div class="container">-->
+    <nav class="navbar navbar-light bg-light">
+        <a href="/" class="navbar-brand">
+            <img src="https://cdn2.vectorstock.com/i/1000x1000/14/21/roaring-lion-logo-king-gold-on-black-background-vector-24171421.jpg" width="30" height="30" alt=""></a>
+    </nav>
+    <!--        <ul class="nav ml-auto navbar-nav">-->
+    <span><a href="/" class="navi">Home</a>&nbsp;&nbsp;
+            <a href="/add" class="navi">Add Job</a></span>
+    <!--        </ul>-->
+    <!--    </div>-->
 </nav>
 
 <div class="jumbotron" style="background-image: url(https://images.unsplash.com/photo-1567920757933-bae576b218af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=670&q=80); background-size: 100%;">
@@ -51,10 +56,11 @@
 <!--        <div class="col-12">-->
         <div th:each="job : ${jobs}">
             <div class="col-3">
-                <div class="card" style="width: 18rem;">
+                <div class="card border border-dark" style="width: 18rem;">
                     <ul class="list-group list-group-flush">
                         <!--                <li class="list-group-item">-->
-                        <p th:inline="text" class="list-group-item">Title: [[${job.title}]]</p>
+
+                        <p th:inline="text" class="card-header">Title: [[${job.title}]]</p>
                         <p th:inline="text" class="list-group-item">Description: [[${job.description}]]</p>
                         <p th:inline="text" class="list-group-item">Posted Date: [[${job.postedDate}]]</p>
                         <p th:inline="text" class="list-group-item">Author: [[${job.author}]]</p>
