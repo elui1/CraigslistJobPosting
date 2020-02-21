@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Job List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<!--<style>-->
+<!--    body {-->
+<!--        background-color: linen;-->
+<!--    }-->
+<!--</style>-->
+<body>
+<h1>Job List</h1>
+<a href="/add">Add a Job</a><br />
+<!--<table>-->
+<!--    <tr>-->
+<!--&lt;!&ndash;        <th>Title&nbsp;&nbsp;&nbsp;</th>&ndash;&gt;-->
+<!--&lt;!&ndash;        <th>Description&nbsp;&nbsp;&nbsp;</th>&ndash;&gt;-->
+<!--        <th>Posted Date&nbsp;&nbsp;&nbsp;</th>-->
+<!--        <th>Author&nbsp;&nbsp;&nbsp;</th>-->
+<!--        <th>Phone&nbsp;&nbsp;&nbsp;</th>-->
+<!--        <td>Actions</td>-->
+<!--    </tr>-->
+<!--    <div class="card" style="width: 18rem;">-->
+<!--        <ul class="list-group list-group-flush">-->
+<!--            <li class="list-group-item">"${job.title}"</li>-->
+<!--            <li class="list-group-item">Dapibus ac facilisis in</li>-->
+<!--            <li class="list-group-item">Vestibulum at eros</li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<div class="container">
+    <div class="row">
+        <div th:each="job : ${jobs}">
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <ul class="list-group list-group-flush">
+                        <!--                <li class="list-group-item">-->
+                        <p th:inline="text" class="list-group-item">Title: [[${job.title}]]</p>
+                        <p th:inline="text" class="list-group-item">Description: [[${job.description}]]</p>
+                        <p th:inline="text" class="list-group-item">Posted Date: [[${job.postedDate}]]</p>
+                        <p th:inline="text" class="list-group-item">Author: [[${job.author}]]</p>
+                        <!--                <th:inline="text" class="list-group-item">Phone: [[${job.phone}]]</td>-->
+                        <!--                </li>-->
+                        <!--                    <td th:inline="text">[[${job.title}]]</td>    -->
+                        <!--                <td th:text-inline="Description: ${job.description}" class="list-group-item"></td>-->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--        <div th:if="${job.pic} !=null" >-->
+<!--            <img th:src="${message.pic}" /><br />-->
+<!--        </div>-->
+<!--        <td>-->
+<!--            <a th:href="@{/update/{id}(id=${job.id})}">Update</a>-->
+<!--            <a th:href="@{/detail/{id}(id=${job.id})}">Details</a>-->
+<!--            <a th:href="@{/delete/{id}(id=${job.id})}">Delete</a>-->
+<!--        </td>-->
+<!--</table>-->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
